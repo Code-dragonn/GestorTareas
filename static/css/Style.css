@@ -49,16 +49,9 @@
     height: 50px;
     margin-top: 25px;
     background-color: var(--backgroundMain);
-    border-radius: 2px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
-    /*!*/
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
-    /*!*/
-
     &:hover {
         /*Style hover the btnStartHome*/
         box-shadow: var(--shadow);
@@ -85,6 +78,9 @@ header {
     display: grid;
     place-items: center;
 
+    & a {
+        text-decoration: none;
+    }
     & h1 {
         /*Style h1 header*/
         color: #fff;
