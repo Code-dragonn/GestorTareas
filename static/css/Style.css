@@ -186,7 +186,7 @@ header {
 
 /* ? Modal box */
 
-#modalBox {
+#modalBox { /* block modal */
     width: 60%;
     height: 450px;
     margin: auto;
@@ -200,13 +200,13 @@ header {
     left: 20%;
 }
 
-#titleModalBox {
+#titleModalBox { /* title modal */
     width: 100%;
     height: 100%;
     display: grid;
     place-items: center;
 
-    & input {
+    & input { /* style input modal title*/
         background-color: var(--backgroundMain);
         width: 95%;
         height: 70%;
@@ -215,10 +215,10 @@ header {
         border: none;
         color: #fff;
 
-        &::placeholder {
+        &::placeholder { /* style color*/
             color: #fff;
         }
-
+        /* ? clear border input */
         &:hover {
             border: none;
         }
@@ -226,10 +226,11 @@ header {
         &:focus {
             outline: none;
         }
+        /* ! */
     }
 }
 
-#descriptionModalBox {
+#descriptionModalBox { /*Description box modal*/
     width: 95%;
     height: 200px;
     display: grid;
@@ -242,17 +243,17 @@ header {
     padding: 20px;
 }
 
-#descriptionTitle {
+#descriptionTitle { /*Title description modal*/
     text-transform: capitalize;
     color: #fff;
     font-size: 20px;
 }
 
-#descriptionText {
+#descriptionText { /* padding description*/
     padding: 10px 0;
 }
 
-#descriptionText textarea {
+#descriptionText textarea { /*Style text description*/
     padding:  20px 0;
     background-color: transparent;
     border: none;
@@ -261,25 +262,25 @@ header {
     text-transform: capitalize;
     color: #fff;
 
-    &::placeholder {
+    &::placeholder { /*color placeholder*/
         color: #fff;
         font-size: 1em;
        
     }
-
+    /* ?  clear border input */
     &:hover {
         border: none;
     }
-
     &:focus {
         outline: none;
     }
+    /* ! */
 }
 
-#btnModalBox {
+#btnModalBox { /*btn options*/
     display: flex;
     padding: 20px;
-    & button {
+    & button { /*btns style general*/
         margin: 0 10px;
         width: 20%;
         background-color: transparent;
@@ -289,13 +290,13 @@ header {
         font-size: 1.1em;
         cursor: pointer;
 
-        &:hover {
+        &:hover { /*shadow hover style*/
             box-shadow: var(--shadow);
         }
     }
 }
 
-#btnColorBoxModal {
+#btnColorBoxModal { /* btn background different */
     background-color: var(--backgroundMain) !important;
     color: #fff !important;
 }
