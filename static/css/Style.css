@@ -1,0 +1,185 @@
+/* ! Default Do not touch */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --backgroundMain: rgb(23, 107, 135);
+    --backgroundSelect: rgb(162, 196, 207);
+    --shadow: 2px 4px 1px rgb(123, 210, 236);
+}
+
+/* ! */
+
+/* ? Index */
+
+#screenMain {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#titleHome {
+    /* Style box */
+    background-color: var(--backgroundMain);
+    width: 100%;
+    height: 40%;
+    /* ...... */
+
+    /* center box */
+    display: grid;
+    place-items: center;
+    /* ..... */
+    & h1 {
+        /* custom h1 */
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 5em;
+    }
+}
+
+#btnStartHome {
+    width: 25%;
+    height: 50px;
+    margin-top: 25px;
+    background-color: var(--backgroundMain);
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    /*!*/
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    /*!*/
+
+    &:hover {
+        /*Style hover the btnStartHome*/
+        box-shadow: var(--shadow);
+    }
+
+    & a {
+        /*Style <a>*/
+        text-decoration: none;
+        color: #fff;
+        text-transform: capitalize;
+        font-size: 1.5em;
+    }
+}
+
+/* ! Index */
+
+/* ? backblog */
+
+header {
+    /*style header board*/
+    height: 80px;
+    text-align: center;
+    background-color: var(--backgroundMain);
+    display: grid;
+    place-items: center;
+
+    & h1 {
+        /*Style h1 header*/
+        color: #fff;
+        font-size: 3em;
+        text-transform: uppercase;
+    }
+}
+
+#board {
+    /*block notes*/
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    column-gap: 1%;
+    place-content: center;
+}
+
+.backBlog {
+    /*Notes */
+    width: 100%;
+    display: grid;
+    grid-template-rows: 60px auto;
+    grid-template-columns: 100%;
+    background-color: var(--backgroundMain);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.titleBlog {
+    /* title block notes*/
+    text-align: center;
+    margin: auto;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.notes {
+    /* note block notes*/
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 60px;
+    background-color: rgb(255, 255, 255);
+    margin: 10px 20px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    cursor: pointer;
+    padding: 10px;
+
+    & p { /* Style <p> note*/
+        margin: auto 20px;
+        text-transform: capitalize;
+    }
+}
+
+.imgEdit {
+    /* img edit note*/
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & img {
+        margin: auto;
+        width: 50%;
+        height: 50%;
+    }
+}
+
+.addNotes {
+    /*img add note*/
+    display: grid;
+    grid-template-rows: 60px;
+    grid-template-columns: auto;
+    place-content: start;
+    background-color: var(--backgroundSelect);
+    margin: 10px 20px 60px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    & img {
+        /*img add*/
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+    }
+}
+
+/* ! backblog */
