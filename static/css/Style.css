@@ -277,10 +277,22 @@ header {
     /* ! */
 }
 
-#btnModalBox { /*btn options*/
-    display: flex;
+#btnModalBox { /*Box btns*/
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 100%;
     padding: 20px;
-    & button { /*btns style general*/
+}
+
+#btnsTask { /*btns mod task */
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 100%;
+    place-items: center;
+
+    & button { /*style default btns from modal*/
+        width: 80% !important;
+        height: 100%;
         margin: 0 10px;
         width: 20%;
         background-color: transparent;
@@ -290,15 +302,32 @@ header {
         font-size: 1.1em;
         cursor: pointer;
 
-        &:hover { /*shadow hover style*/
+        &:hover {
             box-shadow: var(--shadow);
         }
     }
 }
 
-#btnColorBoxModal { /* btn background different */
+#btnColorBoxModal { /*btn background different*/
     background-color: var(--backgroundMain) !important;
     color: #fff !important;
+}
+
+#btnsTaskProgress { /*btns interactive task*/
+    display: flex;
+    justify-content: end;
+
+    & figure { /*box img*/
+        display: grid;
+        place-items: center;
+        grid-template-rows: 100%;
+
+        & img {
+            width: 100px;
+            height: 100%;
+            cursor: pointer;
+        }
+    }
 }
 /* ! Modal box */
 /* ! backlog */
