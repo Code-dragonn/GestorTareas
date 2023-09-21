@@ -36,7 +36,7 @@
                     <img src="static/img/edit.svg" alt="">
                 </figure>
             </article>
-            <article class="addNotes">
+            <article id="addNotes" class="addNotes">
                 <img src="static/img/add.svg" alt="">
             </article>
         </section>
@@ -64,9 +64,7 @@
                     <img src="static/img/edit.svg" alt="">
                 </figure>
             </article>
-            <article class="addNotes">
-                <img src="static/img/add.svg" alt="">
-            </article>
+            
         </section>
         <section class="backBlog">
             <div class="titleBlog">
@@ -91,16 +89,13 @@
                 <figure class="imgEdit">
                     <img src="static/img/edit.svg" alt="">
                 </figure>
-            </article>
-            <article class="addNotes">
-                <img src="static/img/add.svg" alt="">
-            </article>
+            </article>     
         </section>
     </main>
 
     <div id="modalBox">
         <div id="titleModalBox">
-            <input type="text" placeholder="Title note">
+            <input id="contentTittle" type="text" placeholder="Title note">
         </div>
 
         <div id="descriptionModalBox">
@@ -110,7 +105,7 @@
                 </p>
             </div>
             <div id="descriptionText">
-                <textarea  rows="4" placeholder="description"></textarea>
+                <textarea id="contentDescription" rows="4" placeholder="description"></textarea>
             </div>
         </div>
 
