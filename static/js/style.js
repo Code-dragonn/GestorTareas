@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to hide the modal
     function hideModal() {
         modal.style.display = 'none';
-        // Limpiar la nota en edición
+        // Reset editing note
         editingNote = null;
     }
 
@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (noteElement) {
                 noteElement.querySelector("p").textContent = editingNote.title;
             } else {
-                alert ('Accion no valida, intentelo de nuevo.');
+                alert ('Invalid action, try again');
             }
         } else {
             const newNote = new Note(title, description);
@@ -104,4 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Associate the hideModal function with the "Cancel" button in the modal
     cancelButton.addEventListener("click", hideModal);
+
+
+
+
+
 });
