@@ -12,9 +12,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Class to create note objects
     class Note {
-        constructor(title, description) {
+        constructor(title, description, state) {
             this.title = title;
             this.description = description;
+            this.state = state;
         }
     }
 
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to hide the modal
     function hideModal() {
         modal.style.display = 'none';
-        // Reset editing note
+        // Limpiar la nota en edición
         editingNote = null;
     }
 
@@ -51,10 +52,10 @@ document.addEventListener("DOMContentLoaded", function () {
             if (noteElement) {
                 noteElement.querySelector("p").textContent = editingNote.title;
             } else {
-                alert ('Invalid action, try again');
+                alert('Invalid action, try again.');
             }
         } else {
-            const newNote = new Note(title, description);
+            const newNote = new Note(title, description, "to-do");
 
             // Update the graphical interface
             const newNoteElement = createNoteElement(newNote);
@@ -85,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Add an event listener to show the modal when clicking on the note
         newNoteElement.addEventListener("click", () => {
             showNoteInfo(note);
-    });
+        });
 
         return newNoteElement;
     }
@@ -95,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         modal.style.display = 'grid';
         titleInput.value = note.title;
         descriptionInput.value = note.description;
-        // Reset stitingNote
+        // Reset editingNote
         editingNote = note;
     }
 
@@ -105,8 +106,77 @@ document.addEventListener("DOMContentLoaded", function () {
     // Associate the hideModal function with the "Cancel" button in the modal
     cancelButton.addEventListener("click", hideModal);
 
+    // Function to move a note to the next section
+    function moveNoteToNextSection() {
+        if (editingNote) {
+            const currentState = editingNote.state;
+            let nextState = "";
 
+            switch (currentState) {
+                case "to-do":
+                    nextState = "in-progress";
+                    break;
+                case "in-progress":
+                    nextState = "done";
+                    break;
+                default:
+                    alert("Invalid state.");
+                    return;
+            }
 
+            editingNote.state = nextState;
+            // Update the view of the edited note
+            const noteElement = document.querySelector(`[data-title="${editingNote.title}"]`);
+            if (noteElement) {
+                const currentSection = noteElement.closest(".backBlog");
+                currentSection.removeChild(noteElement);
 
+                const nextSection = document.querySelector(`[data-state="${nextState}"]`);
+                nextSection.appendChild(noteElement);
+            } else {
+                alert('Invalid action, try again.');
+            }
+        }
+    }
 
+    // Associate the moveNoteToNextSection function with the "Next" button in the modal
+    const nextButton = document.getElementById("nextBtn");
+    nextButton.addEventListener("click", moveNoteToNextSection);
+
+    // Function to move a note to the previous section
+    function moveNoteToPreviousSection() {
+        if (editingNote) {
+            const currentState = editingNote.state;
+            let previousState = "";
+
+            switch (currentState) {
+                case "in-progress":
+                    previousState = "to-do";
+                    break;
+                case "done":
+                    previousState = "in-progress";
+                    break;
+                default:
+                    alert("Invalid state.");
+                    return;
+            }
+
+            editingNote.state = previousState;
+            // Update the view of the edited note
+            const noteElement = document.querySelector(`[data-title="${editingNote.title}"]`);
+            if (noteElement) {
+                const currentSection = noteElement.closest(".backBlog");
+                currentSection.removeChild(noteElement);
+
+                const previousSection = document.querySelector(`[data-state="${previousState}"]`);
+                previousSection.appendChild(noteElement);
+            } else {
+                alert('Invalid action, try again.');
+            }
+        }
+    }
+
+    // Associate the moveNoteToPreviousSection function with the "Back" button in the modal
+    const backButton = document.getElementById("backTask");
+    backButton.addEventListener("click", moveNoteToPreviousSection);
 });
