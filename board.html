@@ -12,95 +12,38 @@
     </header>
 
     <main id="board">
-        <section class="backBlog">
+        <section class="backBlog" data-state="to-do">
             <div class="titleBlog">
                 <h3>
                     to do
                 </h3>
             </div>
-            <article class="notes" >
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="addNotes">
+
+            <article class="addNotes addNoteButtonToDo">
                 <img src="static/img/add.svg" alt="">
             </article>
         </section>
-        <section class="backBlog">
+        
+        <section class="backBlog" data-state="in-progress">
             <div class="titleBlog">
                 <h3>
                     in progress
                 </h3>
             </div>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="addNotes">
-                <img src="static/img/add.svg" alt="">
-            </article>
         </section>
-        <section class="backBlog">
+        
+        <section class="backBlog" data-state="done">
             <div class="titleBlog">
                 <h3>
                     done
                 </h3>
             </div>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="notes">
-                <p>name notes</p>
-                <figure class="imgEdit">
-                    <img src="static/img/edit.svg" alt="">
-                </figure>
-            </article>
-            <article class="addNotes">
-                <img src="static/img/add.svg" alt="">
-            </article>
         </section>
     </main>
 
     <div id="modalBox">
         <div id="titleModalBox">
-            <input type="text" placeholder="Title note">
+            <input type="text" id="modalTitle" name="modalTitle" placeholder="Title note">
         </div>
 
         <div id="descriptionModalBox">
@@ -110,18 +53,14 @@
                 </p>
             </div>
             <div id="descriptionText">
-                <textarea  rows="4" placeholder="description"></textarea>
+                <textarea rows="4" id="modalDescription" name="modalDescription" placeholder="description"></textarea>
             </div>
         </div>
 
         <div id="btnModalBox">
             <div id="btnsTask">
-                <button id="btnColorBoxModal">
-                    Save
-                </button>
-                <button>
-                    Cancel
-                </button>
+                <button id="btnModalSave">Guardar</button>
+                <button id="btnModalCancel">Cancelar</button>
             </div>
 
             <div id="btnsTaskProgress">
@@ -137,6 +76,6 @@
             </div>
         </div>
     </div>
-</body>
     <script src="static/js/style.js"></script>
+</body>
 </html>
