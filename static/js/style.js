@@ -6,9 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const titleInput = document.getElementById("modalTitle");
     const descriptionInput = document.getElementById("modalDescription");
     const saveButton = document.getElementById("btnModalSave");
+    const trashButton = document.getElementById("trashBtn");
+
 
     // Global variable for the note being edited
     let editingNote = null;
+
 
     // Class to create note objects
     class Note {
@@ -104,4 +107,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Associate the hideModal function with the "Cancel" button in the modal
     cancelButton.addEventListener("click", hideModal);
+
+
+    trashButton.addEventListener("click", deleteNote);
+    function deleteNote() {
+        if (editingNote) {
+            //After delete the task, the modal is hidden
+            hideModal();
+        }
+    
+        if (confirm("Are you sure you want to delete this task")) {
+            if (editingNote) {
+                // Clean up the note in editing
+                editingNote = null;
+            }
+    
+            // Find and remove the task in the DOM
+            const noteElement = document.querySelector(`[data-title="${titleInput.value}"]`);
+            if (noteElement) {
+                noteElement.remove();
+            } else {
+                alert('the note to be deleted was not found');
+            }
+        }
+    }
+    
 });
+
