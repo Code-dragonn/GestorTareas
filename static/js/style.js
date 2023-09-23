@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to hide the modal
     function hideModal() {
         modal.style.display = 'none';
-        // Limpiar la nota en edición
+        // Clean up the note in editing
         editingNote = null;
     }
 
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (noteElement) {
                 noteElement.querySelector("p").textContent = editingNote.title;
             } else {
-                alert('Invalid action, try again.');
+                alert('Cannot change title, try again.');
             }
         } else {
             const newNote = new Note(title, description, "to-do");
