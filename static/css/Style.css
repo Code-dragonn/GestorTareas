@@ -363,6 +363,7 @@ header {
         width: 90%;
         height: 80vh;
         margin: auto 0;
+        bottom: 0;
         grid-template-columns: 80vh;
         grid-template-rows: repeat(3,30%);
 
