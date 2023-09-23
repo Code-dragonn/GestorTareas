@@ -327,3 +327,132 @@ header {
 }
 /* ! Modal box */
 /* ! backlog */
+
+/* ? Responsive */
+@media (width <= 375px) {
+    /* ? Index */
+    #titleHome {
+        height: 30%;
+        border-radius: 20px;
+        & h1 {
+            font-size: 2rem;
+        }
+    }
+
+    #btnStartHome {
+        width: 50%;
+        height: 60px;
+    }
+    /* ! index */
+
+    /* ? board */
+    header a h1 {
+        font-size: 1.5rem;
+    }
+
+    #board {
+        grid-template-columns: 1fr;
+
+        & .backBlog {
+            width: 80%;
+            margin: 20px auto;
+        }
+    }
+
+    #modalBox {
+        width: 90%;
+        height: 90vh;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        /* margin: 0 auto; */
+        grid-template-columns: 100%;
+        place-items: center;
+
+        & #titleModalBox {
+            width: 100%;
+            margin: 0;
+            place-items: inherit;
+            
+        }
+
+        & #btnModalBox {
+            grid-template-columns: none;
+            grid-template-rows: repeat(2,50%);
+            /* row-gap: 2%; */
+
+            & #btnsTaskProgress{
+                grid-template-columns: repeat(3,33%);
+                place-items: center;
+
+                & figure {
+                    height: 80%;
+
+                    & img {
+                        height: 50%;
+                        /* width: 50%; */
+                    }
+                }
+            }
+        }
+    }
+    /* ! board */
+}
+
+@media (375px <= width <= 768px){
+    
+
+    #board {
+        grid-template-columns: 1fr;
+
+        & .backBlog {
+            width: 70%;
+            margin: 20px auto;
+        }
+    }
+
+    #modalBox {
+        width: 90%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        margin: 3.5em auto;
+        grid-template-columns: 100%;
+        place-items: center;
+
+        & #titleModalBox {
+            width: 100%;
+            margin: 0;
+            place-items: inherit;
+            
+        }
+
+        & #btnModalBox {
+            grid-template-columns: none;
+            grid-template-rows: repeat(2,50%);
+            /* row-gap: 2%; */
+
+            & #btnsTaskProgress{
+                grid-template-columns: repeat(3,33%);
+                place-items: center;
+
+                & figure {
+                    height: 80%;
+
+                    & img {
+                        height: 50%;
+                        /* width: 50%; */
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+/* ! responsive */
