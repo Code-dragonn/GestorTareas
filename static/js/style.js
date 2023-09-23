@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const titleInput = document.getElementById("modalTitle");
     const descriptionInput = document.getElementById("modalDescription");
     const saveButton = document.getElementById("btnModalSave");
+    const trashButton = document.getElementById("trashBtn");
 
     // Global variable for the note being edited
     let editingNote = null;
@@ -133,6 +134,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const nextSection = document.querySelector(`[data-state="${nextState}"]`);
                 nextSection.appendChild(noteElement);
+                hideModal();
             } else {
                 alert('Invalid action, try again.');
             }
@@ -170,13 +172,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const previousSection = document.querySelector(`[data-state="${previousState}"]`);
                 previousSection.appendChild(noteElement);
+                hideModal();
             } else {
                 alert('Invalid action, try again.');
             }
         }
+        
     }
 
     // Associate the moveNoteToPreviousSection function with the "Back" button in the modal
     const backButton = document.getElementById("backTask");
     backButton.addEventListener("click", moveNoteToPreviousSection);
+
+    
+    trashButton.addEventListener("click", deleteNote);
+    function deleteNote() {
+       
+        if (confirm("Are you sure you want to delete this task")) {
+            
+    
+            // Find and remove the task in the DOM
+    const noteElement = document.querySelector(`[data-title="${titleInput.value}"]`);
+            if (noteElement) {
+                noteElement.remove();
+            } else {
+                alert('the note to be deleted was not found');
+            }
+        }
+        hideModal();
+        titleInput.value = "";
+        descriptionInput.value = "";
+    }
 });
